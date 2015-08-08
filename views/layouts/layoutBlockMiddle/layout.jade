@@ -1,0 +1,29 @@
+doctype html
+html(ng-app='engageDialer')
+    head
+        block head
+            block title
+                title Goes - to
+            block meta
+                meta(name='viewport', content='width=device-width, initial-scale=1.0')
+                meta(name='description', content='')
+                meta(name='keywords', content='')
+
+            //scripts
+            script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+            script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js')
+            script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-route.min.js')
+            script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js')
+
+            //CSS
+            link(rel='stylesheet', href='/stylesheets/layouts/layoutBlockMiddle/style.css')
+            link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    body
+        include header
+        div(class="content")
+            block content
+        include footer
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular-smart-table/2.0.1/smart-table.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/5.0.7/ng-file-upload-all.min.js')
+    include ../../core/javascript_core.jade
