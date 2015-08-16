@@ -13,12 +13,12 @@ var bodyParser = require('body-parser');
 global.env = process.env.node_env;
 
 //Logging
-//var logging = require('./src/core/logging');
-//global._logger = logging;
+var logging = require('./src/core/logging');
+global._logger = logging;
 
 //Config
-//var config = require('./src/core/configuration');
-//global._config = config.getSettings();
+var config = require('./src/core/configuration');
+global._config = config.getSettings();
 
 if (global.env == "local") {
   function minJavascript() {
@@ -57,7 +57,7 @@ app.use('/app', express.static(path.join(__dirname, 'app')));
 //app.use(cookieParser());
 
 //API
-//require('./api/api')(app);
+require('./api/api')(app);
 
 //Routes
 app.use('/', require('./routes/public_routes'));
