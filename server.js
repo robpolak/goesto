@@ -1,7 +1,5 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var http = require('http');
 var app = express();
@@ -15,12 +13,12 @@ var bodyParser = require('body-parser');
 global.env = process.env.node_env;
 
 //Logging
-var logging = require('./src/core/logging');
-global._logger = logging;
+//var logging = require('./src/core/logging');
+//global._logger = logging;
 
 //Config
-var config = require('./src/core/configuration');
-global._config = config.getSettings();
+//var config = require('./src/core/configuration');
+//global._config = config.getSettings();
 
 if (global.env == "local") {
   function minJavascript() {
@@ -30,15 +28,15 @@ if (global.env == "local") {
       });
       fs.writeFileSync('public/javascripts/goes-to.min.js', js.code);
       fs.writeFileSync('public/javascripts/goes-to.min.map.js', js.map);
-      global._logger.logTrace('Done Loading JS');
-      global._minFiles = files;
+      //global._logger.logTrace('Done Loading JS');
+      global._minJsFiles = files;
     });
   }
 
   minJavascript();
 }
 
-global._logger.logTrace('Starting Express');
+//global._logger.logTrace('Starting Express');
 
 //Body Parser
 app.use(bodyParser.json());
@@ -55,11 +53,11 @@ app.use('/app', express.static(path.join(__dirname, 'app')));
 
 //EXPRESS
 //app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(logger('dev'));
-app.use(cookieParser());
+//app.use(logger('dev'));
+//app.use(cookieParser());
 
 //API
-require('./api/api')(app);
+//require('./api/api')(app);
 
 //Routes
 app.use('/', require('./routes/public_routes'));
@@ -67,8 +65,8 @@ app.use('/', require('./routes/public_routes'));
 
 
 
-app.get('*', function(req, res){
-  global._logger.logTrace('404 Not Found',req.originalUrl);
+app.get('*', function(req, res, next){
+  //global._logger.logTrace('404 Not Found',req.originalUrl);
   res.status(404).send();
 });
 
@@ -93,8 +91,9 @@ function normalizePort(val) {
 
   return false;
 }
+
 process.on('uncaughtException', function (err) {
-  global._logger.logError("Uncaught Exception", err);
+  //global._logger.logError("Uncaught Exception", err);
   throw err;
 });
 
@@ -107,7 +106,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  global._logger.logTrace('Listening on ' + bind);
+  console.log('Listening on ' + bind);
 }
 
 module.exports = app;

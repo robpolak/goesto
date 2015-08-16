@@ -1,0 +1,32 @@
+{
+  "name": "goesto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robpolak/goesto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robpolak/goesto/issues"
+  },
+  "homepage": "https://github.com/robpolak/goesto#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "connect-busboy": "0.0.2",
+    "cookie-parser": "^1.3.5",
+    "express": "^4.13.3",
+    "glob": "^5.0.14",
+    "jade": "^1.11.0",
+    "uglify-js": "^2.4.24"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}

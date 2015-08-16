@@ -1,0 +1,30 @@
+doctype html
+html(ng-app='engageDialer')
+    head
+        block head
+            block title
+                title Goes To - Url Shortner
+            block meta
+                meta(name='viewport', content='width=device-width, initial-scale=1.0')
+                meta(name='description', content='')
+                meta(name='keywords', content='')
+        //scripts
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+        script(src='//code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+        script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js')
+        script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js')
+
+        //stylesheets
+        //include ../../core/css_core.jade
+        link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+        link(href='/stylesheets/font-awesome-4.2.0/css/font-awesome.css', rel='stylesheet')
+        link(href='/css/main.css', rel='stylesheet')
+        //favicon
+        //include ../../core/favicon
+    body
+        div(id='wrapper')
+            include header
+            include body
+            include footer
+
+    include ../../core/javascript_core.jade
