@@ -15,8 +15,8 @@ angular
   .config(function ($routeProvider) {
     // PUBLIC Routes
     $routeProvider
-      .when('/login', {
-        templateUrl: '/public/views/authentication/loginModal.jade',
+      .when('/', {
+        templateUrl: '/public/views/homeView.jade',
         controller: 'HomecontrollerCtrl'
       })
       //DEFAULT

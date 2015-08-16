@@ -7,7 +7,7 @@
  * # HomecontrollerCtrl
  * Controller of the goesToApp
  */
-angular.module('goesToApp')
+angular.module('goesTo')
   .controller('HomecontrollerCtrl', function ($scope) {
 
   });
